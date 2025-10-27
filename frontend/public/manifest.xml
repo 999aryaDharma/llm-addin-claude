@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+
+  <!-- Basic Info -->
+  <Id>12345678-abcd-efgh-ijkl-123456789abc</Id>
+  <Version>2.5.0</Version>
+  <ProviderName>Your Company</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Office LLM Assistant"/>
+  <Description DefaultValue="AI-powered assistant for Word and Excel"/>
+
+  <!-- Icon URLs -->
+  <IconUrl DefaultValue="https://localhost:3001/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3001/assets/icon-64.png"/>
+
+  <!-- Support URL -->
+  <SupportUrl DefaultValue="https://www.example.com/support"/>
+
+  <!-- Host requirements -->
+  <Hosts>
+    <Host Name="Workbook"/>
+    <Host Name="Document"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3001/taskpane.html"/>
+  </DefaultSettings>
+
+  <!-- Permissions -->
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <!-- Version Overrides -->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+
+    <!-- Hosts -->
+    <Hosts>
+
+      <!-- Word Configuration -->
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <!-- Function file -->
+          <FunctionFile resid="Commands.Url"/>
+
+          <!-- Extension points -->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="AIAssistantGroup">
+                <Label resid="GroupLabel"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+
+                <!-- Show Taskpane Button -->
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+
+                <!-- Quick Rewrite Button (Word) -->
+                <Control xsi:type="Button" id="RewriteButton">
+                  <Label resid="RewriteButton.Label"/>
+                  <Supertip>
+                    <Title resid="RewriteButton.Label"/>
+                    <Description resid="RewriteButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>quickRewrite</FunctionName>
+                  </Action>
+                </Control>
+
+                <!-- Quick Analyze Button (Excel) -->
+                <Control xsi:type="Button" id="AnalyzeButton">
+                  <Label resid="AnalyzeButton.Label"/>
+                  <Supertip>
+                    <Title resid="AnalyzeButton.Label"/>
+                    <Description resid="AnalyzeButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>quickAnalyze</FunctionName>
+                  </Action>
+                </Control>
+
+                <!-- Get Insights Button (Excel) -->
+                <Control xsi:type="Button" id="InsightsButton">
+                  <Label resid="InsightsButton.Label"/>
+                  <Supertip>
+                    <Title resid="InsightsButton.Label"/>
+                    <Description resid="InsightsButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>getInsights</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+
+          <!-- Context menu -->
+          <ExtensionPoint xsi:type="ContextMenu"> <!-- Word Context Menu -->
+            <OfficeMenu id="ContextMenuCell">
+              <Control xsi:type="Button" id="ContextAnalyzeButton">
+                <Label resid="AnalyzeButton.Label"/>
+                <Supertip>
+                  <Title resid="AnalyzeButton.Label"/>
+                  <Description resid="AnalyzeButton.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>quickAnalyze</FunctionName>
+                </Action>
+              </Control>
+            </OfficeMenu>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+
+    </Hosts>
+
+    <!-- Resources -->
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3001/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3001/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3001/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3001/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3001/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GroupLabel" DefaultValue="AI Assistant"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Open AI Assistant"/>
+        <bt:String id="RewriteButton.Label" DefaultValue="AI Rewrite"/>
+        <bt:String id="AnalyzeButton.Label" DefaultValue="AI Analyze"/>
+        <bt:String id="InsightsButton.Label" DefaultValue="Get Insights"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open the AI Assistant panel"/>
+        <bt:String id="RewriteButton.Tooltip" DefaultValue="Rewrite selected text with AI"/>
+        <bt:String id="AnalyzeButton.Tooltip" DefaultValue="Analyze selected data with AI"/>
+        <bt:String id="InsightsButton.Tooltip" DefaultValue="Get AI-powered insights from your data"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

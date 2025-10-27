@@ -1,0 +1,401 @@
+# ============================================================================
+# Office LLM Add-in - GitIgnore
+# ============================================================================
+
+# ============================================================================
+# Python
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================================================
+# IDE / Editors
+# ============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================================
+# Operating System
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+
+# Environment variables (CRITICAL - contains API keys!)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Data directories
+backend/data/
+backend/data/chroma/
+backend/data/cache/
+backend/data/logs/
+backend/data/uploads/
+
+# Test files
+backend/test_document.txt
+backend/test_data.xlsx
+backend/test_*.txt
+backend/test_*.docx
+backend/test_*.xlsx
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+*.cache
+
+# ============================================================================
+# Node.js / Frontend (jika ada)
+# ============================================================================
+
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Production
+/build
+/dist
+
+# Misc
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+.parcel-cache
+
+# ============================================================================
+# Office Add-in Specific
+# ============================================================================
+
+# Office Add-in certificates
+*.pfx
+*.p12
+certs/
+
+# Office cache
+AppData/
+
+# ============================================================================
+# API Keys & Secrets (CRITICAL!)
+# ============================================================================
+
+# Google API
+google_credentials.json
+service_account.json
+*_credentials.json
+
+# API Keys
+api_keys.txt
+secrets.txt
+*.key
+*.pem
+*.crt
+
+# Config files with secrets
+config_local.py
+settings_local.py
+local_settings.py
+
+# ============================================================================
+# Backup & Archives
+# ============================================================================
+
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================================================
+# Documentation (generated)
+# ============================================================================
+
+# Sphinx
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# MkDocs
+site/
+
+# ============================================================================
+# ChromaDB Specific
+# ============================================================================
+
+# ChromaDB data
+chroma_data/
+*.parquet
+*.arrow
+
+# ============================================================================
+# Virtual Environment Names (common patterns)
+# ============================================================================
+
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+virtualenv/
+pythonenv/
+
+# Conda
+.conda/
+conda-meta/
+
+# ============================================================================
+# Additional Patterns
+# ============================================================================
+
+# Generated files
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Package files
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+.eggs/
+*.whl
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Testing
+.pytest_cache/
+.tox/
+
+# Profiling
+*.prof
+
+# ============================================================================
+# Keep These Files (Negation)
+# ============================================================================
+
+# Keep example files
+!.env.example
+!.env.template
+!example_config.py
+
+# Keep empty directories with .gitkeep
+!.gitkeep
+
+# ============================================================================
+# End of .gitignore
+# ============================================================================
